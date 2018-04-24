@@ -17,12 +17,11 @@
 #ifndef _BDROID_BUILDCFG_H
 #define _BDROID_BUILDCFG_H
 
-#define BTM_DEF_LOCAL_NAME        "Redmi 5"
+#include <cutils/properties.h>
+#include <string.h>
 
-#define BLE_VND_INCLUDED          TRUE
-#define BLUETOOTH_QTI_SW          TRUE
-#define BT_CLEAN_TURN_ON_DISABLED TRUE
-#define BTM_SCO_ENHANCED_SYNC_DISABLED TRUE
-#define MAX_ACL_CONNECTIONS       16
-
+#define BTM_DEF_LOCAL_NAME "Xiaomi Redmi 5"
+#define BTA_DISABLE_DELAY 1000 /* in milliseconds */
+#define BLUETOOTH_QTI_SW TRUE
+#define BLE_VND_INCLUDED   TRUE
 #endif

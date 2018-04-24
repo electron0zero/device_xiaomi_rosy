@@ -1,2 +1,0 @@
-goodix.fp                        u:object_r:goodixfpd_service:s0
-android.hardware.fingerprint.IGoodixFingerprintDaemon  u:object_r:goodixfpd_service:s0

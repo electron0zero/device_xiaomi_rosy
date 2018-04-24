@@ -1,6 +1,5 @@
 #
-# Copyright (C) 2016 The CyanogenMod Project
-#               2017 The LineageOS Project
+# Copyright (C) 2017 The LineageOS Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -19,27 +18,20 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
-# Inherit some common Lineage stuff
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
-
 # Inherit from rosy device
-$(call inherit-product, $(LOCAL_PATH)/device.mk)
+$(call inherit-product, device/xiaomi/rosy/device.mk)
 
-PRODUCT_BRAND := Xiaomi
+# Inherit some common LineageOS stuff.
+$(call inherit-product, vendor/cm/config/common_full_phone.mk)
+
+# Device identifier. This must come after all inclusions
+TARGET_VENDOR := Xiaomi
 PRODUCT_DEVICE := rosy
-PRODUCT_MANUFACTURER := Xiaomi
 PRODUCT_NAME := lineage_rosy
+PRODUCT_BRAND := Xiaomi
+PRODUCT_MODEL := Redmi 5
+PRODUCT_MANUFACTURER := Xiaomi
+WITH_SU := true
+WITH_EXFAT := true
 
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
-
-TARGET_VENDOR_PRODUCT_NAME := rosy
-
-PRODUCT_BUILD_PROP_OVERRIDES += \
-    BUILD_FINGERPRINT=xiaomi/rosy/rosy:7.1.2/N2G47H/V9.2.3.0.NEGCNEK:user/release-keys \
-    PRIVATE_BUILD_DESC="rosy-user 7.1.2 N2G47H V9.2.3.0.NEGCNEK release-keys"
-
-# Set BUILD_FINGERPRINT variable to be picked up by both system and vendor build.prop
-BUILD_FINGERPRINT := xiaomi/rosy/rosy:7.1.2/N2G47H/V9.2.3.0.NEGCNEK:user/release-keys
-
-PRODUCT_SYSTEM_PROPERTY_BLACKLIST += \
-    ro.product.model
